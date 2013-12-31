@@ -1,0 +1,25 @@
+{
+  "name": "heroku-comics-feed",
+  "version": "0.1.0",
+  "description": "Service that embed the comic strip images to a given feed",
+  "author": "KY LEE <leesei@gmail.com> (http://leesei.github.io/)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leesei/heroku-comics-feed.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leesei/heroku-comics-feed/issues"
+  },
+  "keywords": [
+    "rss",
+    "feed",
+    "comics",
+    "scrape"
+  ],
+  "dependencies": {
+    "comics-feed": "git+https://github.com/leesei/node-comics-feed.git",
+    "express": "~3.4.7"
+  },
+  "license": "MIT"
+}
