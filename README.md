@@ -1,7 +1,7 @@
 Heroku app: comics-feed
 ==================
 
-A sample Heroku application service that embed the comic strip images to a given feed.
+A sample Heroku application that embed the comic strip images to a given feed.
 
 ## Usage
 
@@ -11,11 +11,11 @@ heroku apps:create NAME
 git push heroku master
 ```
 
-Then visit http:/_NAME_.herokuapp.com/embed/_URL_:  
-  _NAME_ is the Heroku app name you specified  
-  _URL_ is the URL of the feed you want to embed comics strip in
+Then visit `http:/_NAME_.herokuapp.com/embed/_URL_`, where:  
+_NAME_ is the Heroku app name you specified  
+_URL_ is the URL of the feed you want to embed comics strip in
 
-Check leesei/node-comics-feed for supported feeds.
+Check [node-comics-feed](https://github.com/leesei/node-comics-feed) for supported feeds.
 
 ## Tested on
 
