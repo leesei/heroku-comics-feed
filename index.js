@@ -2,6 +2,7 @@
 
 var comicsFeed = require('comics-feed');
 var express = require('express');
+var fs = require('fs');
 
 var app = express();
 app.use(express.logger());
@@ -9,6 +10,12 @@ app.use(express.logger());
 app.get('/env', function(req, res) {
   res.setHeader('Content-Type', 'text/plain');
   res.send(JSON.stringify(process.env, null, 2));
+});
+
+// cache the index file upon load
+var index = fs.readFileSync('index.html', 'utf-8');
+app.get('/', function(req, res) {
+  res.send(index);
 });
 
 app.get('/embed/:url', function(req, res) {
@@ -30,7 +37,8 @@ app.get('/embed/:url', function(req, res) {
     function (err, feedXml) {
       if (err) {
         return res.json(500, {
-          message: "error parsing: " + feedUrl
+          message: "error parsing: " + feedUrl,
+          error: err.toString()
         });
       }
       res.setHeader('Content-Type', 'application/rss+xml');

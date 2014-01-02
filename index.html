@@ -1,0 +1,53 @@
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Comics Feed Embedder</title>
+</head>
+
+<body>
+
+	<h2>Comics Feed Embedder</h2>
+
+	<h4>Embed comic strips to comics feed that serves only the URL to the webpage</h4>
+
+	<p>Uses <a href="https://github.com/leesei/node-comics-feed">node-comics-feed</a>. Visit <a href="https://github.com/leesei/node-comics-feed">repo</a> for supported sites.</p>
+
+	<p>
+		<form action="">
+			<input id="feed-url" size="80" autocomplete="off" type="url" placeholder="    -----  Input feed url  -----"></input>
+			<br><br>
+
+			<input id="result" size="80" disabled="true" readonly="true"></input>
+			<br>
+			<a id="preview" href="">Preview</a>
+		</form>
+	</p>
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+$(document).ready(function () {
+	console.log('current location: ' + window.location);
+
+	$('#feed-url').on('change', function () {
+		// console.log('feed changed: ' + $(this).val());
+
+		var url =
+			String(window.location).replace(/\/$/, '') +  // strip trailing slash
+			// window.location +
+			'/embed/' +  // namespace for embed handler
+			encodeURIComponent($(this).val());
+
+		// console.log('feed url: ' + url);
+		$('#result').val(url);
+		$('#preview').attr('href', url);
+	});
+});
+</script>
+</html>
