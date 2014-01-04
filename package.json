@@ -1,6 +1,6 @@
 {
   "name": "heroku-comics-feed",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Service that embed the comic strip images to a given feed",
   "author": {
     "name": "KY LEE",
