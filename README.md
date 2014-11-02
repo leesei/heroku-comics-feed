@@ -22,8 +22,9 @@ Check [node-comics-feed](https://github.com/leesei/node-comics-feed) for support
 
 ## Tested on
 
-http://localhost:5000/embed/http%3A%2F%2Ffeed.dilbert.com%2Fdilbert%2Fdaily_strip  
-http://localhost:5000/embed/http%3A%2F%2Ffeeds.feedburner.com%2Fuclick%2Fdilbert-classics
+- http://localhost:5000/embed/http%3A%2F%2Ffeed.dilbert.com%2Fdilbert%2Fdaily_strip  
+- http://localhost:5000/embed/http%3A%2F%2Ffeeds.feedburner.com%2Fuclick%2Fdilbert-classics
+- http://localhost:5000/embed/http%3A%2F%2Ffeeds.feedburner.com%2FExplosm
 
 To local host the application:
 
