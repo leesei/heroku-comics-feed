@@ -23,14 +23,8 @@ app.get('/', function(req, res) {
 // or without % encoding:
 // http://feed.dilbert.com/dilbert/daily_strip
 app.get(/^\/embed\/(.*)$/, function(req, res) {
-  paramurl = req.params[0];
-  var feedUrl = "";
-  if(paramurl === "CH") {
-    // shortcut for Cyanide & Happiness comic...
-    feedUrl = "http://feeds.feedburner.com/Explosm";
-  } else {
-    feedUrl = decodeURIComponent(paramurl);
-  }
+  var rawUrl = req.params[0];
+  var feedUrl = decodeURIComponent(rawUrl);
   console.log('Processing: ' + feedUrl);
 
   // only supports feed from HTTP server
