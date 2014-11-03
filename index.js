@@ -19,7 +19,13 @@ app.get('/', function(req, res) {
 });
 
 app.get('/embed/:url', function(req, res) {
-  var feedUrl = decodeURIComponent(req.params.url);
+  var feedUrl = "";
+  if(req.params.url === "CH") {
+    // shortcut for Cyanide & Happiness comic...
+    feedUrl = "http://feeds.feedburner.com/Explosm";
+  } else {
+    feedUrl = decodeURIComponent(req.params.url);
+  }
   console.log('Processing: ' + feedUrl);
 
   // only supports feed from HTTP server
