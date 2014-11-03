@@ -18,13 +18,18 @@ app.get('/', function(req, res) {
   res.send(index);
 });
 
-app.get('/embed/:url', function(req, res) {
+// The routing here is /embed/<ORIGINAL RSS URL> where the URL can be encoded e.g.
+// http%3A%2F%2Ffeed.dilbert.com%2Fdilbert%2Fdaily_strip
+// or without % encoding:
+// http://feed.dilbert.com/dilbert/daily_strip
+app.get(/^\/embed\/(.*)$/, function(req, res) {
+  paramurl = req.params[0];
   var feedUrl = "";
-  if(req.params.url === "CH") {
+  if(paramurl === "CH") {
     // shortcut for Cyanide & Happiness comic...
     feedUrl = "http://feeds.feedburner.com/Explosm";
   } else {
-    feedUrl = decodeURIComponent(req.params.url);
+    feedUrl = decodeURIComponent(paramurl);
   }
   console.log('Processing: ' + feedUrl);
 
