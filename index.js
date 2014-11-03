@@ -37,8 +37,7 @@ app.get(/^\/embed\/(.*)$/, function(req, res) {
   comicsFeed.embedStrips(
     {
       url: feedUrl,
-      verbose: true,
-      maxitems: 0
+      verbose: true
     },
     function (err, feedXml) {
       if (err) {
