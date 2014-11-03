@@ -39,7 +39,7 @@ app.get('/embed/:url', function(req, res) {
     {
       url: feedUrl,
       verbose: true,
-      maxitems: 5
+      maxitems: 0
     },
     function (err, feedXml) {
       if (err) {
