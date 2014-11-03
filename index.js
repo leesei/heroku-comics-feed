@@ -18,8 +18,13 @@ app.get('/', function(req, res) {
   res.send(index);
 });
 
-app.get('/embed/:url', function(req, res) {
-  var feedUrl = decodeURIComponent(req.params.url);
+// The routing here is /embed/<ORIGINAL RSS URL> where the URL can be encoded e.g.
+// http%3A%2F%2Ffeed.dilbert.com%2Fdilbert%2Fdaily_strip
+// or without % encoding:
+// http://feed.dilbert.com/dilbert/daily_strip
+app.get(/^\/embed\/(.*)$/, function(req, res) {
+  var rawUrl = req.params[0];
+  var feedUrl = decodeURIComponent(rawUrl);
   console.log('Processing: ' + feedUrl);
 
   // only supports feed from HTTP server

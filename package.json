@@ -10,10 +10,10 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/leesei/heroku-comics-feed.git"
+    "url": "git://github.com/eguendelman/heroku-comics-feed.git"
   },
   "bugs": {
-    "url": "https://github.com/leesei/heroku-comics-feed/issues"
+    "url": "https://github.com/eguendelman/heroku-comics-feed/issues"
   },
   "keywords": [
     "rss",
@@ -22,7 +22,7 @@
     "scrape"
   ],
   "dependencies": {
-    "comics-feed": "git+https://github.com/leesei/node-comics-feed.git",
+    "comics-feed": "git+https://github.com/eguendelman/node-comics-feed.git#eguendelman-cyanideandhappiness",
     "express": "~3.4.7"
   },
   "license": "MIT"
