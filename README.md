@@ -20,10 +20,7 @@ Index page `http:/_NAME_.herokuapp.com/` helps to URI-encode feed url.
 
 Check [node-comics-feed](https://github.com/leesei/node-comics-feed) for supported sites.
 
-## Tested on
-
-http://localhost:5000/embed/http%3A%2F%2Ffeed.dilbert.com%2Fdilbert%2Fdaily_strip  
-http://localhost:5000/embed/http%3A%2F%2Ffeeds.feedburner.com%2Fuclick%2Fdilbert-classics
+## Local testing
 
 To local host the application:
 
